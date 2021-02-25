@@ -9,6 +9,7 @@ import { Attendee } from '../../../models';
   styleUrls: ['./add-attendee.component.scss']
 })
 export class AddAttendeeComponent {
+  
   addAttendeeForm = new FormGroup({
     name: new FormControl('', [Validators.required])
   });
