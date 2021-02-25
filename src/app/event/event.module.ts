@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EventComponent } from './containers/event/event.component';
+import { AddAttendeeComponent } from './components/add-attendee/add-attendee.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,6 @@ import { EventComponent } from './containers/event/event.component';
       { path: '', component: EventComponent }
     ])
   ],
-  declarations: [EventComponent]
+  declarations: [EventComponent, AddAttendeeComponent]
 })
 export class EventModule { }
