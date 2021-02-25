@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/containers/home/home.component';
+import { EventModule } from './event/event.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { HomeComponent } from './home/containers/home/home.component';
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: HomeComponent },
-      { path: 'event', loadChildren: './event/event.module' }
+      { path: 'event', loadChildren: './event/event.module#EventModule' }
     ])
   ],
   providers: [],
