@@ -1,17 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AddAttendeeComponent } from './add-attendee.component';
+import { Attendee } from '../../../models';
 
 describe('AddAttendeeComponent', () => {
   let component: AddAttendeeComponent;
   let fixture: ComponentFixture<AddAttendeeComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AddAttendeeComponent ]
-    })
-    .compileComponents();
-  });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
+      declarations: [AddAttendeeComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddAttendeeComponent);
@@ -21,5 +23,14 @@ describe('AddAttendeeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have an invalid form on load', () => {
+    expect(component.addAttendeeForm.valid).toEqual(false);
+  });
+  
+  it('should have a valid form', () => {
+    component.addAttendeeForm.controls.name.setValue('Duncan');
+    expect(component.addAttendeeForm.valid).toEqual(true);
   });
 });
