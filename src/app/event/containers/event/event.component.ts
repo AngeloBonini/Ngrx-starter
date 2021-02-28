@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Attendee } from 'src/app/models';
+import { Attendee } from '../../../models';
 import { EventService } from '../../services/event.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event',
@@ -9,13 +9,11 @@ import { EventService } from '../../services/event.service';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
-  // attendees: Attendee[] = [];
   attendees$: Observable<Attendee[]>;
-  constructor(
-    private eventService: EventService
-  ) { }
 
-  ngOnInit(): void {
+  constructor(private eventService: EventService) {}
+
+  ngOnInit() {
     this.getAttendees();
   }
 
@@ -23,9 +21,9 @@ export class EventComponent implements OnInit {
     this.attendees$ = this.eventService.getAttendees();
   }
 
-  // addAttendee(attendee: Attendee) {
-  //   this.attendees = [...this.attendees, attendee];
-  //   console.log('TCL: AddAttendeeComponent -> submit -> attendee', this.attendees);
-  // }
-
+  addAttendee(attendee: Attendee) {
+    this.eventService
+      .addAttendee(attendee)
+      .subscribe(() => this.getAttendees());
+  }
 }
