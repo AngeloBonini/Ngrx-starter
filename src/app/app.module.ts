@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/containers/home/home.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './app.db';
+import { EventModule } from 'src/app/event/event.module';
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [

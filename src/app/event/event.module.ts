@@ -13,7 +13,7 @@ import { EventListComponent } from './components/event-list/event-list.component
     CommonModule,
     RouterModule.forChild([{ path: '', component: EventComponent }]),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [EventComponent, AddAttendeeComponent, EventListComponent]
 })
