@@ -12,10 +12,10 @@ import { InMemoryDataService } from './app.db';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: HomeComponent },
-      { path: 'event', loadChildren: './event/event.module#EventModule' }
-    ]),
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    { path: 'home', component: HomeComponent },
+    { path: 'event', loadChildren: './event/event.module#EventModule' }
+], { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 }),
   ],
