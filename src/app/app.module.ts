@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddCardComponent } from './ui/add-card/add-card.component';
 import { WeatherCardComponent } from './ui/weather-card/weather-card.component';
+import { ErrorComponent } from './ui/error/error.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { WeatherCardComponent } from './ui/weather-card/weather-card.component';
     HomeComponent,
     AddCardComponent,
     WeatherCardComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
